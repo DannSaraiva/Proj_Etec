@@ -1,0 +1,41 @@
+<%- include('../partials/header.ejs') %>
+    <div class="container">
+
+        <%- include('../partials/menu.ejs') %>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 style="text-align: center;margin: 30px;">Medicamentos</h3>
+                </div>
+            </div>
+
+            <% medicamento.data.forEach(medicamento=>{
+                %>
+
+                <div class="card mt-3 p-4">
+                    <div class="card-body">
+                        <p>Nome: <%= medicamento.nome_medicamento %>
+                        </p>
+
+                        <p>Descrição: <%= medicamento.descricao_medicamento %>
+                        </p>
+
+                    </div>
+
+                    <div class="btn-group">
+                        <a href="/listarMedicamento/<%= medicamento.id_medicamento %>"
+                            class="btn btn-warning btn-sm mr-2 ml-2 " style="margin: 10px;">Editar</a>
+                        <a href="/excluirMedicamento/<%= medicamento.id_medicamento %>"
+                            class="btn btn-danger btn-sm mr-2 ml-2" style="margin: 10px;">Excluir</a>
+                    </div>
+
+                </div>
+
+                <% }) %>
+
+    </div>
+
+    </body>
+    <%- include('../partials/footer.ejs') %>
+
+        </html>
